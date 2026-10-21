@@ -1,0 +1,25 @@
+{
+  "devices": [
+    {
+      "id": "00000000-1111-2222-3333-444455556666",
+      "label": "my-iphone.local",
+      "service_type": "_remotepairing._tcp",
+      "bonjour_host": "my-iphone.local",
+      "remote_port": 49152,
+      "txt": {
+        "ver": "26",
+        "identifier": "00000000-1111-2222-3333-444455556666",
+        "authTag": "xxxxxxxx",
+        "minVer": "8",
+        "flags": "0"
+      },
+      "provider": "tailscale",
+      "tailscale_node": "my-iphone",
+      "fallback_ip": "100.64.0.10",
+      "tunnel_start": 55000,
+      "tunnel_end": 58000
+    }
+  ],
+  "bind_host": "0.0.0.0",
+  "advertise_ip": "auto"
+}

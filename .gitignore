@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+.venv-xbridge/
+.venv-xbridge.bak/
+
+# Runtime state - contains real device identifiers, never commit:
+config.json
+state.json
+p.pid
+*.log
+
+# macOS / build artifacts
+.DS_Store
+XBridge.app/
+build/
+*.dmg
