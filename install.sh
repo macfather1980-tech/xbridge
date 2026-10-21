@@ -90,7 +90,9 @@ if [ "$BUILD_GUI" = "1" ]; then
 </dict>
 </plist>
 EOF
-    swiftc -O "$ROOT/xbridge-gui.swift" -o "$APP/Contents/MacOS/XBridge"
+    # Pin the deployment target: a recent toolchain may default to a minimum
+    # OS newer than the user's macOS, which dyld then refuses to launch.
+    swiftc -O -target "$(uname -m)-apple-macos13.0" "$ROOT/xbridge-gui.swift" -o "$APP/Contents/MacOS/XBridge"
     codesign --force -s - "$APP"
     echo "    built (ad-hoc signed - on a fresh Mac, right-click the app and choose 'Open' once)"
 fi

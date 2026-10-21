@@ -175,7 +175,7 @@ XBridge itself is free. You need **Tailscale** on both ends:
 ```sh
 /usr/bin/python3 -m venv .venv-xbridge
 .venv-xbridge/bin/pip install zeroconf ifaddr     # or just run ./install.sh
-swiftc -O xbridge-gui.swift -o /tmp/XBridge && /tmp/XBridge   # run the GUI from source
+swiftc -O -target "$(uname -m)-apple-macos13.0" xbridge-gui.swift -o /tmp/XBridge && /tmp/XBridge
 ```
 
 `xbridge.py` is a single-file CLI containing all engine logic;
